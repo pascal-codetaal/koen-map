@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.maplibregl-popup-content {
+  padding: 0 !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden !important;
+  max-width: 95vw !important;
+}
+
+.maplibregl-popup-close-button {
+  display: none !important;
+}
+
+.maplibregl-popup-tip {
+  border-top-color: white !important;
+}
+
+.mapboxgl-popup-content {
+  width: 600px; /* Set fixed or dynamic width */
+  padding: 10px;
+}
