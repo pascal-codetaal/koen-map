@@ -8,6 +8,7 @@ export const locations: Location[] = [
     logo: "homaar.jpg",
     latitude: 51.00795238185401,
     longitude: 3.890978112271981,
+    groupId: 0,
     description: "(Wegvoeringstraat 102)",
     images: [
       "/images/Homaar_1.jpg",
@@ -24,6 +25,7 @@ export const locations: Location[] = [
     logo: "arktos.png",
     latitude: 51.00377276875741,
     longitude: 3.884671867238993,
+    groupId: 1,
     description: "(Lange Kouterstraat 14a)",
   },
 
@@ -34,6 +36,7 @@ export const locations: Location[] = [
     logo: "overkop.png",
     latitude: 51.00396682490927,
     longitude: 3.8851642365547034,
+    groupId: 2,
     description: "(Wim De Craeneplein 1)",
     images: ["/images/OverKop_1.jpg", "/images/OverKop_2.jpg"],
   },
@@ -45,6 +48,7 @@ export const locations: Location[] = [
     logo: "fiola.png",
     latitude: 51.013684469013846,
     longitude: 3.8903361969301136,
+    groupId: 3,
     description: "(Kasterstraat 81)",
   },
 
@@ -55,6 +59,7 @@ export const locations: Location[] = [
     logo: "velt.png",
     latitude: 51.00985270686149,
     longitude: 3.9153999095703185,
+    groupId: 4,
     description: "(Veldwegel)",
     images: [
       "/images/Samentuin Veldwegel_1.jpg",
@@ -70,6 +75,7 @@ export const locations: Location[] = [
     sidebar: true,
     name: "Pluk9230 ",
     logo: "pluk.png",
+    groupId: 5,
     latitude: 51.00731723008584,
     longitude: 3.884459995441523,
     description: "(Dekenijtuin, Marktdreef 1)",
@@ -88,6 +94,7 @@ export const locations: Location[] = [
     logo: "natuurpunt.png",
     latitude: 51.02618353733803,
     longitude: 3.923838153904735,
+    groupId: 6,
     description: "(Oude Schelde,  Kalkense Meersen, Roerdomp-fietsbrug)",
     images: [
       "/images/Natuurpunt Scheldeland_1.jpg",
@@ -107,6 +114,7 @@ export const locations: Location[] = [
     latitude: 50.97800999547985,
     longitude: 3.8792863002176126,
     description: "(Kriephoekstraat 4)",
+    groupId: 7,
     sidebar: true,
     future: true,
   },
@@ -117,6 +125,7 @@ export const locations: Location[] = [
     logo: "corridor.png",
     latitude: 50.99718743104891,
     longitude: 3.881059871563953,
+    groupId: 8,
     description: "(Olmenlaan)",
     sidebar: true,
     future: true,
@@ -128,6 +137,7 @@ export const locations: Location[] = [
     logo: "bib.png",
     latitude: 51.00695203465086,
     longitude: 3.8861294553618397,
+    groupId:9,
     description: "(Markt 27)",
     sidebar: true,
     future: true,
@@ -139,6 +149,7 @@ export const locations: Location[] = [
     logo: "kunstacademie.png",
     latitude: 51.00373439571824,
     longitude: 3.88473621910713,
+    groupId: 10,
     description: "(Lange Kouterstraat 1)",
     sidebar: true,
     future: true,
@@ -148,6 +159,7 @@ export const locations: Location[] = [
     id: 224,
     name: "Art Roze ",
     logo: "artroze.png",
+    groupId: 11,
     latitude: 51.00644152260199,
     longitude: 3.8861880506737405,
     description: "(Kerkstraat 39)",
@@ -159,6 +171,7 @@ export const locations: Location[] = [
     id: 225,
     name: "Bok VZW + Let's save food ",
     logo: "bok.png",
+    groupId: 12,
     latitude: 50.99922783992002,
     longitude: 3.8647713778187134,
     description: "(Gentsesteenweg 179a)",
@@ -170,6 +183,7 @@ export const locations: Location[] = [
     id: 226,
     name: "'t Ensemble",
     logo: "ensemble.png",
+    groupId: 13,
     latitude: 50.998713296406784,
     longitude: 3.889549566997809,
     description: "(Oude Aardeweg 39a)",
@@ -180,7 +194,6 @@ export const locations: Location[] = [
     id: 110,
     name: "Pluk9230",
     logo: "pluk.png",
-
     latitude: 51.00809263800876,
     longitude: 3.890380810423167,
     groupId: 5,
@@ -336,5 +349,5 @@ export const multiLocations: {
   location1: Location;
   location2: Location;
 }[] = [
-  { name: "homaar - pluk1", location1: {...locations[0]}, location2: {...locations[4]} },
+  { name: "homaar - pluk1", location1: {...locations[0], groupId:100}, location2: {...locations[4],groupId:100} },
 ];

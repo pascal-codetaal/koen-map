@@ -15,14 +15,17 @@ export const LocationMarkers: React.FC<LocationMarkersProps> = ({
 }) => {
   return (
     <>
-      {locations.map(location => (
-        <CustomMarker
-          key={location.id}
-          location={location}
-          onClick={() => onLocationSelect(location)}
-          // active={selectedLocation?.groupId === location?.groupId}
-        />
-      ))}
+      {locations.map(location => {
+        console.log(location.name, Array.isArray(selectedLocation) ? false : selectedLocation?.groupId === location?.groupId)
+        return (
+          <CustomMarker
+            key={location.id}
+            location={location}
+            onClick={() => onLocationSelect(location)}
+            active={Array.isArray(selectedLocation) ? false : selectedLocation?.groupId === location?.groupId}
+          />
+        )
+      })}
     </>
   );
 };
