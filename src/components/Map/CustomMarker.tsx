@@ -1,7 +1,7 @@
-import React from 'react';
+import type React from 'react';
 import { Marker } from 'react-map-gl';
-import { CircleDot } from 'lucide-react';
-import { Location } from '../../types/Location';
+import { CircleDot, MapPin } from 'lucide-react';
+import type { Location } from '../../types/Location';
 
 interface CustomMarkerProps {
   location: Location;
@@ -20,7 +20,7 @@ export const CustomMarker: React.FC<CustomMarkerProps> = ({ location, onClick, a
     <Marker
       latitude={location.latitude}
       longitude={location.longitude}
-      anchor="bottom"
+      anchor="center"
     >
       <button
         type="button"
@@ -36,7 +36,7 @@ export const CustomMarker: React.FC<CustomMarkerProps> = ({ location, onClick, a
         )}
         <CircleDot
           size={32}
-          className={`text-green-800 hover:text-orange-500 ${active ? '' : 'opacity-70'} transition-colors duration-600`}
+          className={`text-white hover:text-orange-500 ${active ? 'text-orange-400 animate-pulse' : 'opacity-100'} transition-colors duration-600`}
           strokeWidth={3}
         />
       </button>

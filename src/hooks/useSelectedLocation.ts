@@ -1,10 +1,11 @@
 import { useState, useCallback } from 'react';
+// biome-ignore lint/style/useImportType: <explanation>
 import { Location } from '../types/Location';
 
 export const useSelectedLocation = () => {
-  const [selectedLocation, setSelectedLocation] = useState<Location | null>(null);
+  const [selectedLocation, setSelectedLocation] = useState<Location | Location[]| null>(null);
 
-  const handleLocationSelect = useCallback((location: Location) => {
+  const handleLocationSelect = useCallback((location: Location | Location[]) => {
     setSelectedLocation(location);
   }, []);
 

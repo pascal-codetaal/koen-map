@@ -28,7 +28,7 @@ export const LocationListItem: React.FC<LocationListItemProps> = ({
       
       <div>
         <h3 className="font-medium text-gray-900">{location.name}</h3>
-        <p className="text-sm text-gray-500 line-clamp-2">{location.description}</p>
+        {/* <p className="text-sm text-gray-500 line-clamp-2">{location.description}</p> */}
       </div>
     </button>
   );

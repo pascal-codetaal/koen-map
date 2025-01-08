@@ -18,6 +18,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
   return (
     <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center">
       <button
+        type="button"
         onClick={onClose}
         className="absolute top-4 right-4 text-white/75 hover:text-white p-2"
         aria-label="Close gallery"
@@ -27,6 +28,7 @@ export const ImageGallery: React.FC<ImageGalleryProps> = ({
 
       <button
         onClick={previousImage}
+        type='button'
         className="absolute left-4 text-white/75 hover:text-white p-2"
         aria-label="Previous image"
       >

@@ -14,13 +14,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onLocationSelect,
 }) => {
   return (
-    <div className="w-96 h-screen bg-white shadow-lg p-6 overflow-y-auto">
-      <h2 className="text-2xl font-semibold text-gray-900 mb-6">Onze partners</h2>
+    <>
+      <h3 className="text-1xl font-semibold text-gray-900 ">Onze partners</h3>
       <LocationList
         locations={locations.filter((location) => location.sidebar)}
         selectedLocation={selectedLocation}
         onLocationSelect={onLocationSelect}
       />
-    </div>
+
+    </>
   );
 }

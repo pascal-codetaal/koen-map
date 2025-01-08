@@ -4,7 +4,7 @@ import { CustomMarker } from './CustomMarker';
 
 interface LocationMarkersProps {
   locations: Location[];
-  selectedLocation: Location | null;
+  selectedLocation: Location | Location[] | null;
   onLocationSelect: (location: Location) => void;
 }
 
@@ -20,7 +20,7 @@ export const LocationMarkers: React.FC<LocationMarkersProps> = ({
           key={location.id}
           location={location}
           onClick={() => onLocationSelect(location)}
-          active={selectedLocation?.groupId === location.groupId}
+          // active={selectedLocation?.groupId === location?.groupId}
         />
       ))}
     </>
