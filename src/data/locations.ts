@@ -61,7 +61,7 @@ export const locations: Location[] = [
     groupId: 3,
     description: "(Kasterstraat 81)",
     images: [
-      "/images/Fiola_1.jpg",
+      "/images/Fiola_1.webp",
       "/images/Fiola_2.jpg",
       "/images/Fiola_3.jpg",
       "/images/Fiola_4.jpg",
