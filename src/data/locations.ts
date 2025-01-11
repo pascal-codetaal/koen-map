@@ -124,6 +124,17 @@ export const locations: Location[] = [
     ],
   },
   {
+    id: 1223,
+    name: "Dienst Jeugd (Gemeente Wetteren)",
+    logo: "wetteren.png",
+    latitude: 51.004067241066736,
+    longitude: 3.894373683436209,
+    groupId: 1223,
+    description: "",
+    sidebar: true,
+
+  },
+  {
     id: 220,
     name: "Wriemel",
     logo: "wriemel.png",
@@ -169,17 +180,7 @@ export const locations: Location[] = [
     sidebar: true,
     future: true,
   },
-  {
-    id: 1223,
-    name: "Dienst Jeugd (Gemeente Wetteren)",
-    logo: "wetteren.png",
-    latitude: 51.004067241066736,
-    longitude: 3.894373683436209,
-    groupId: 1223,
-    description: "",
-    sidebar: true,
-
-  },
+ 
 
   {
     id: 224,
