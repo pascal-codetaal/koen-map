@@ -11,7 +11,33 @@ import { useGalleryState } from './hooks/useGalleryState';
 import { useMapState } from './hooks/useMapState';
 import { useSelectedLocation } from './hooks/useSelectedLocation';
 import { SidebarMulti } from './components/SidebarMulti/SidebarMulti';
+import type { Location } from './types/Location';
 
+function getBounds(points:Location[]) {
+  if (!points || points.length === 0) {
+    throw new Error("Array of points cannot be empty.");
+  }
+
+  let minLatitude = Number.POSITIVE_INFINITY;
+  let maxLatitude = Number.NEGATIVE_INFINITY;
+  let minLongitude = Number.POSITIVE_INFINITY;
+  let maxLongitude = Number.NEGATIVE_INFINITY;
+
+  for(const point of points) {
+    const { latitude, longitude } = point;
+
+    if (latitude < minLatitude) minLatitude = latitude;
+    if (latitude > maxLatitude) maxLatitude = latitude;
+
+    if (longitude < minLongitude) minLongitude = longitude;
+    if (longitude > maxLongitude) maxLongitude = longitude;
+  };
+
+  return [
+    [minLongitude, minLatitude],
+    [maxLongitude, maxLatitude]
+  ];
+}
 export function App() {
   const { viewState, handleMove } = useMapState();
   const { selectedLocation, handleLocationSelect, handleLocationClose } = useSelectedLocation();
@@ -24,7 +50,31 @@ export function App() {
     <>
       <div className="flex">
         <div className="w-96 h-screen bg-white shadow-lg p-6 overflow-y-auto">
-          <h2 className="text-2xl font-semibold text-gray-900 mb-6">Wetters Weefsel</h2>
+        <button
+            className="text-2xl font-semibold text-gray-900 mb-6"
+            onClick={() => {
+              const bounds = getBounds(locations);
+              if (mapRef.current) {
+                mapRef.current.fitBounds(bounds as mapboxgl.LngLatBoundsLike, {
+                  padding: 100,
+                });
+              }
+            }}
+            onKeyUp={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                const bounds = getBounds(locations);
+                if (mapRef.current) {
+                  mapRef.current.fitBounds(bounds as mapboxgl.LngLatBoundsLike, {
+                    padding: 100,
+                  });
+                }
+              }
+            }}
+            tabIndex={0}
+            role="button"
+          >
+            Wetters Weefsel
+          </button>
 
           <Sidebar
             locations={activeLocations}
@@ -41,17 +91,17 @@ export function App() {
               checked={futurePartners}
               onChange={() => setFuturePartners(!futurePartners)}
             />
-            <label htmlFor="future-partners">Toekomstige partners</label>
+            <label htmlFor="future-partners">Mogelijke toekomstige partners</label>
           </div>
           <SidebarMulti
             locations={multiLocations}
             selectedLocation={Array.isArray(selectedLocation) ? selectedLocation : null}
             onLocationSelect={(location) => {
               handleLocationSelect(location)
-              if(Array.isArray(location) && mapRef.current){
+              if (Array.isArray(location) && mapRef.current) {
                 mapRef.current.fitBounds([[location[0].longitude, location[0].latitude], [location[1].longitude, location[1].latitude]], {
                   padding: 100,
-                  
+
                 })
               }
             }}

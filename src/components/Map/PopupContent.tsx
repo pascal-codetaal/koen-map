@@ -24,7 +24,7 @@ export const PopupContent: React.FC<PopupContentProps> = ({ location, onViewGall
           className="w-full py-3 px-4 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
         >
           <ImageIcon size={20} />
-         Bekijk de foto's
+         Bekijk
         </button>}
       </div>
     </div>

@@ -30,13 +30,13 @@ export const CustomMarker: React.FC<CustomMarkerProps> = ({ location, onClick, a
       >
         {active && (
           <div className="relative top-5 flex justify-center items-center">
-            <div className="absolute w-4 h-4 bg-orange-500 rounded-full animate-ping" />
-            <div className="w-2 h-2 bg-orange-500 rounded-full" />
+        <div className="absolute w-4 h-4 bg-orange-500 rounded-full animate-ping" />
+        <div className="w-2 h-2 bg-orange-500 rounded-full" />
           </div>
         )}
         <CircleDot
           size={32}
-          className={`text-white hover:text-orange-500 ${active ? 'text-orange-400 animate-pulse' : 'opacity-100'} transition-colors duration-600`}
+          className={`${location.future ? 'text-green-200' : 'text-white'} hover:text-orange-500 ${active ? 'text-orange-400 animate-pulse' : 'opacity-100'} transition-colors duration-600 `}
           strokeWidth={3}
         />
       </button>

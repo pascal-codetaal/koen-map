@@ -27,6 +27,12 @@ export const locations: Location[] = [
     longitude: 3.884671867238993,
     groupId: 1,
     description: "(Lange Kouterstraat 14a)",
+    images: [
+      "/images/Arktos_1.jpg",
+      "/images/Arktos_2.jpg",
+      "/images/Arktos_3.jpg",
+      "/images/Arktos_4.jpg",
+    ],
   },
 
   {
@@ -38,7 +44,11 @@ export const locations: Location[] = [
     longitude: 3.8851642365547034,
     groupId: 2,
     description: "(Wim De Craeneplein 1)",
-    images: ["/images/OverKop_1.jpg", "/images/OverKop_2.jpg"],
+    images: [
+      "/images/OverKop_1.jpg",
+      "/images/OverKop_2.jpg",
+      "/images/OverKop_3.jpg",
+    ],
   },
 
   {
@@ -50,6 +60,12 @@ export const locations: Location[] = [
     longitude: 3.8903361969301136,
     groupId: 3,
     description: "(Kasterstraat 81)",
+    images: [
+      "/images/Fiola_1.jpg",
+      "/images/Fiola_2.jpg",
+      "/images/Fiola_3.jpg",
+      "/images/Fiola_4.jpg",
+    ],
   },
 
   {
@@ -68,7 +84,7 @@ export const locations: Location[] = [
       "/images/Samentuin Veldwegel_4.jpg",
       "/images/Samentuin Veldwegel_5.jpg",
       "/images/Samentuin Veldwegel_6.jpg",
-    ]
+    ],
   },
   {
     id: 5,
@@ -84,7 +100,7 @@ export const locations: Location[] = [
       "/images/Pluk9230_2.jpg",
       "/images/Pluk9230_3.jpg",
       "/images/Pluk9230_4.jpg",
-    ]
+    ],
   },
 
   {
@@ -137,12 +153,11 @@ export const locations: Location[] = [
     logo: "bib.png",
     latitude: 51.00695203465086,
     longitude: 3.8861294553618397,
-    groupId:9,
+    groupId: 9,
     description: "(Markt 27)",
     sidebar: true,
     future: true,
   },
-
   {
     id: 223,
     name: "Kunstacademie",
@@ -153,6 +168,17 @@ export const locations: Location[] = [
     description: "(Lange Kouterstraat 1)",
     sidebar: true,
     future: true,
+  },
+  {
+    id: 1223,
+    name: "Dienst Jeugd (Gemeente Wetteren)",
+    logo: "wetteren.png",
+    latitude: 51.004067241066736,
+    longitude: 3.894373683436209,
+    groupId: 1223,
+    description: "",
+    sidebar: true,
+
   },
 
   {
@@ -170,7 +196,7 @@ export const locations: Location[] = [
   {
     id: 225,
     name: "Bok VZW + Let's save food ",
-    logo: "bok.png",
+    logo: "food.png",
     groupId: 12,
     latitude: 50.99922783992002,
     longitude: 3.8647713778187134,
@@ -349,5 +375,14 @@ export const multiLocations: {
   location1: Location;
   location2: Location;
 }[] = [
-  { name: "homaar - pluk1", location1: {...locations[0], groupId:100}, location2: {...locations[4],groupId:100} },
+  {
+    name: "homaar - pluk1",
+    location1: { ...locations[0], groupId: 100 },
+    location2: {
+      ...locations[4],
+      groupId: 100,
+      logo: "homaar-pluk.png",
+      images: ["video"],
+    },
+  },
 ];
