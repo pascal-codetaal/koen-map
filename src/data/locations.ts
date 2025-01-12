@@ -29,8 +29,8 @@ export const locations: Location[] = [
     description: "(Lange Kouterstraat 14a)",
     images: [
       "/images/Arktos_1.jpg",
-      "/images/Arktos_2.jpg",
-      "/images/Arktos_3.jpg",
+      "/images/Arktos_2.jpeg",
+      "/images/Arktos_3.jpeg",
       "/images/Arktos_4.jpg",
     ],
   },
@@ -377,12 +377,14 @@ export const multiLocations: {
   location2: Location;
 }[] = [
   {
-    name: "homaar - pluk1",
+    name: "Homaar - Velt",
     location1: { ...locations[0], groupId: 100 },
     location2: {
-      ...locations[4],
+      ...locations[5],
+      latitude: 51.00985270686149,
+      longitude: 3.9153999095703185,
       groupId: 100,
-      logo: "homaar-pluk.png",
+      logo: "velt-homaar.png",
       images: ["video"],
     },
   },
